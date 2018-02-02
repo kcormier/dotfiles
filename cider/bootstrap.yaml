@@ -1,39 +1,18 @@
 taps:
   - 'caskroom/cask'
-  - 'caskroom/drivers'
-  - 'caskroom/fonts'
-  - 'homebrew/command-not-found'
-  - 'homebrew/core'
-  - 'ravenac95/sudolikeaboss'
-
-after-scripts:
-    # - "./scripts/update_ruby.sh"
-    # - "./scripts/keybindings/install.sh"
-    # - "'./scripts/Terminal Launcher/install.sh'"
-    # - "cd ./scripts/swift && ./install"
-    # - "./scripts/vim_setup.sh"
-    # create some library links for handbrake
-    - "~/.dotfiles/scripts/handbrake_link.sh"
-    # create sudo config for launchctl
-    - "~/.dotfiles/scripts/sudo_config.sh"
-    - "brew linkapps"
-    # - "open /usr/local/Caskroom/adobe-creative-cloud/latest/Creative\ Cloud\ Installer.app"
-    # Because...terraform
-    - "brew switch terraform 0.9.11"
-    - "brew pin terraform"
 
 casks:
     # Applications
     - "aws-vault"
     - "beyond-compare"
     - "caffeine"
+    - "google-chrome"
     - "firefox"
     - "filezilla"
     - "flux"
     - "google-cloud-sdk"
     - "iterm2"
     - "omnigraffle"
-    - "packer"
     - "phpstorm"
     - "pritunl"
     - "shiftit"
@@ -43,12 +22,7 @@ casks:
     - "vagrant"
     - "virtualbox"
     - "wireshark"
-    - "xbox360-controller-driver"
     - "yubico-authenticator"
-
-"dependencies":
-  "crashplan": "java"
-#     "mit-scheme": "casks/xquartz"
 
 "formulas":
     - "brew-cask-completion"
@@ -57,17 +31,10 @@ casks:
     - "gnu-time"
     - "gnupg"
     - "httpie"
-    # Github's replacement for git
     - "hub"
     - "jq"
-    # Mac App Store CLI
-    - "mas"
-    # Aren't these already installed?
-    # - "pyenv"
-    # - "pyenv-virtualenv"
     - "pygobject3"
     - "python"
-    # Virtual env for ruby
     - "rbenv"
     - "ruby-build"
     - "shellcheck"

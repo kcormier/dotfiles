@@ -32,7 +32,7 @@ Initialize [Homebrew](https://brew.sh):
 
 ### Python
 
-Prefer [pyenv](https://github.com/pyenv/pyenv) and [pynenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) over the global version:
+Prefer [pyenv](https://github.com/pyenv/pyenv) and [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) over the global version:
 
     $ ./scripts/python_init.sh
 
