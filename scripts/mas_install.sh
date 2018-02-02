@@ -23,32 +23,21 @@ done
 # "Global" variables
 #
 MAS_APPS=(
-  # Deliveries (3.0.3)
-  924726344
-  # Display Menu (2.2.2)
-  549083868
-  # LastPass (3.22.2)
-  926036361
-  # Moom (3.2.9)
-  419330170
-  # MuteMyMic (1.10)
-  456362093
-  # Radium (3.1.3)
-  597611879
-  # Slack (2.7.1)
-  803453959
-  # UnPlugged (3.0)
-  423123087
-  # Wunderlist (3.4.7)
-  410628904
-  # Xcode (8.3.3)
-  497799835
-  # properVOLUME (1.1.4)
-  521142667
+  # Installed manually as part of prep
+  # 443987910  #1Password
+  406056744  #Evernote
+  412980789  #Full Deck Solitaire
+  803453959  #Slack
+  406825478  #Telephone
+  410628904  #Wunderlist
+  715768417  #Microsoft Remote Desktop 8.0
+  1295203466 #Microsoft Remote Desktop 10
+  497799835  #Xcode
 )
 
 # Might need this if running under tmux
-user_namespace_attach="$(command -v reattach-to-user-namespace 2>/dev/null)"
+# || echo ensures we don't fail in the event reattach-to-user-namespace is missing
+user_namespace_attach="$(command -v reattach-to-user-namespace 2>/dev/null || echo)"
 
 if [[ $(command -v mas) ]]; then
   for APP in "${MAS_APPS[@]}"; do
@@ -60,4 +49,7 @@ if [[ $(command -v mas) ]]; then
     fi
     putinfo "Done"
   done
+else
+  puterror "mas command not found"
+  exit 1
 fi

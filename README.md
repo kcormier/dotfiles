@@ -17,15 +17,11 @@ Initialize [Homebrew](https://brew.sh):
 
     $ brew cask install 1password
 
-## Basic github configure
+## Install mas
 
-Find `GitHub_rsa.priv` in 1password and install at `~/.ssh/GitHub_rsa.priv`; then:
+    $ brew install mas
 
-    $ chmod 400 ~/.ssh/GitHub_rsa.priv
 
-Configure a very basic `~/.ssh/config`:
-
-    $ echo -e "Host *github.com\n    IdentityFile ~/.ssh/GitHub_rsa.priv\n" > ~/.ssh/config
 
 # Get the dots
 
@@ -34,18 +30,20 @@ Configure a very basic `~/.ssh/config`:
     $ git submodule init
     $ git submodule update
 
-### Powerline compatibility
-
-    $ cd powerline
-    $ git checkout tags/2.1
-
 ### Python
 
 Prefer [pyenv](https://github.com/pyenv/pyenv) and [pynenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) over the global version:
 
     $ ./scripts/python_init.sh
 
+### Mac AppStore Apps
+
+Install the apps from the AppStore:
+
+    # ./scripts/mas_install.sh
+
 ### Bootstrap
+<!-- Some casks may require Xcode be installed, which comes from mas.  Always run mas first! -->
 
 Bootstrap many things with [Cider](https://github.com/msanders/cider):
 
@@ -54,12 +52,6 @@ Bootstrap many things with [Cider](https://github.com/msanders/cider):
     $ yes | cider restore
     $ cider apply-defaults
     $ cider relink
-
-### Mac AppStore Apps
-
-Install the apps from the AppStore:
-
-    # ./scripts/mas_install.sh
 
 ### Perl
 

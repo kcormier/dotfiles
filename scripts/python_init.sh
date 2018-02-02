@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 #
 #
-set -o errexit -o pipefail -o nounset
+set -o errexit -o pipefail 
 # set -x
 WORKDIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" || exit; pwd -P)
+export PROMPT_COMMAND=bananas
 #
 ##############################################################################
 #
@@ -46,13 +47,13 @@ fi
 #
 # virtualenv
 #
-if $(command -v virtualenv >/dev/null); then
+if $(command -v pyenv-virtualenv-init >/dev/null); then
   eval "$(pyenv virtualenv-init -)"
 else
   puterr "virtualenv not installed"
-  brew install virtualenv
+  brew install pyenv-virtualenv
 
-  if $(command -v virtualenv >/dev/null); then
+  if $(command -v pyenv-virtualenv-init >/dev/null); then
     putsuccess "virtualenv installed"
   else
     puterr "virtualenv not installed"
@@ -60,9 +61,15 @@ else
   fi
 fi
 
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 pyenv install --skip-existing $PYENV_VERSION
-pyenv virtualenv $PYENV_VERSION python-local-${PYENV_VERSION}
-
+if $(pyenv versions --bare | grep python-local-${PYENV_VERSION} &> /dev/null); then
+  putsuccess "virtual environment 'python-local-${PYENV_VERSION}' already exists."
+else
+  pyenv virtualenv $PYENV_VERSION python-local-${PYENV_VERSION}
+fi
+pyenv shell python-local-${PYENV_VERSION}
 pyenv which pip
 
-pip install -r ../pip.txt
+pip install -r "${WORKDIR}/../pip.txt"
