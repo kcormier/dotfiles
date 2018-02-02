@@ -1,0 +1,23 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Ansible",
+		"Asterisk Config",
+		"EditorConfig",
+		"GitGutter",
+		"Jinja2",
+		"JSON Reindent",
+		"Markdown Preview",
+		"Package Control",
+		"Puppet",
+		"Random Everything",
+		"Random Text",
+		"RPM Spec Syntax",
+		"SqlBeautifier",
+		"Terraform"
+	]
+}
