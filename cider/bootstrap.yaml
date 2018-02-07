@@ -41,6 +41,7 @@ formulas:
 symlinks:
     bash_profile/.*: '~'
     bashrc/.*: '~'
-    sublime/*: !!python/unicode '~/Library/Application Support/Sublime Text 3/Packages/'
+    git/.*: '~'
+    sublime/*: ~/Library/Application Support/Sublime Text 3/Packages/
 taps:
 - caskroom/cask
