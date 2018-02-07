@@ -1,0 +1,37 @@
+[user]
+	email = kevin.cormier87@gmail.com
+	name = Kevin Cormier
+[push]
+	default = simple
+[diff]
+[difftool]
+[merge]
+[color]
+	ui = true
+[mergetool]
+[difftool]
+[difftool "bcompare"]
+[diff]
+	tool = opendiff
+[difftool "bc3"]
+[alias]
+	bc3 = difftool --dir-diff
+	pr = !git difftool --dir-diff $(git merge-base HEAD origin/master)..HEAD
+	mm = !git difftool --dir-diff $(git merge-base HEAD origin/master)..origin/master
+[merge]
+	tool = opendiff
+[mergetool "bc3merge"]
+	cmd = /usr/local/bin/bcomp \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\"
+
+[filter "lfs"]
+	smudge = git-lfs smudge %f
+	required = true
+	clean = git-lfs clean %f
+
+#driver for merging Xcode project files
+[mergetool "mergepbx"]
+    cmd = mergepbx "$BASE" "$LOCAL" "$REMOTE" -o "$MERGED"
+[dif]
+	tool = opendiff
+[core]
+	editor = vim
