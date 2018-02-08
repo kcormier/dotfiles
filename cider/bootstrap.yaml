@@ -39,9 +39,10 @@ formulas:
 - wget
 - xctool
 symlinks:
+    airport/*: !!python/unicode '/usr/local/bin/'
     bash_profile/.*: '~'
     bashrc/.*: '~'
     git/.*: '~'
-    sublime/*: '~/Library/Application Support/Sublime Text 3/Packages/'
+    sublime/*: ~/Library/Application Support/Sublime Text 3/Packages/
 taps:
 - caskroom/cask

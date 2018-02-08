@@ -5,8 +5,8 @@ export PATH="/Users/kcormier/simplisafe_projects/chewie-tool/bin:$PATH"
 #
 # Add rbenv
 #
-eval "$(rbenv init -)"
-rbenv bundler on
+#eval "$(rbenv init -)"
+#rbenv bundler on
 
 #
 # pyenv

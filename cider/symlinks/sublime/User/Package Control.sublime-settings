@@ -18,6 +18,8 @@
 		"Random Text",
 		"RPM Spec Syntax",
 		"SqlBeautifier",
+		"SublimeLinter",
+		"SublimeLinter-pycodestyle",
 		"Terraform"
 	]
 }
